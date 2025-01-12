@@ -1,4 +1,4 @@
-# Cdrv8833 - Updates for esp32-hal-gpio API v3.0
+# Cdrv8833 - Updates for Arduino-ESP32 LEDC API v3.0
 
 <img src="https://github.com/shurillu/Cdrv8833/blob/f3dccc3f0448b2a2071de1e72d5ad1d12b7a835d/images/DRV8833.jpg" alt="DRV8833 module" width="180"/>
 
