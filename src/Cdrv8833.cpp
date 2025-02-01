@@ -33,7 +33,7 @@ bool Cdrv8833::init(uint8_t in1Pin, uint8_t in2Pin, uint8_t channel, bool swapDi
 	m_decayMode = drv8833DecaySlow;
 	#if ESP_IDF_VERSION_MAJOR < 5 
             ledcSetup(channel, PWM_FREQUENCY, PWM_BIT_RESOLUTION);
-        #endif
+  #endif
 	return true;
 }
 
@@ -117,7 +117,12 @@ bool Cdrv8833::move(int8_t power) {
 			#endif
 		}
 	}
-	ledcWrite(m_channel, dutyCycle);
+	#if ESP_IDF_VERSION_MAJOR < 5 
+	    ledcWrite(m_channel, dutyCycle);
+	#else
+            ledcWriteChannel(m_channel, dutyCycle);
+        #endif
+        
 	return true;
 }
 
